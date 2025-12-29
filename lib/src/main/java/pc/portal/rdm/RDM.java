@@ -5,7 +5,11 @@ public class RDM {
         CLEAN, INFECTED, UNKNOWN
     }
 
-    public static final void actOn(RDMResult result) {
+    public static enum RDMEnvironment {
+        STANDARD, MINECRAFT
+    }
+
+    public static final void actOn(RDMResult result, RDMEnvironment environment) {
         switch (result) {
             case INFECTED:
                 System.err.println("\n" +
@@ -15,8 +19,17 @@ public class RDM {
                         "Please remove any native libraries and try again.\n\n" +
                         "This can be mitigated by:\n" +
                         "- NOT using the native code\n" +
-                        "- Lifting the native code to WASM and then JVM bytecode\n" +
+                        "- Lifting the native code to WASM and then JVM bytecode, forming a safe execution environment\n"
+                        +
                         "- Using a different, pure-Java implementation of the same functionality.\n");
+                switch (environment) {
+                    case STANDARD:
+                        break;
+                    case MINECRAFT:
+                        System.err.println(
+                                "It is shunned in the Minecraft community to use native code in mods, as it can lead to instability and security risks. Please ensure that your mod does not include any native libraries.");
+                        break;
+                }
                 System.exit(1);
                 break;
             case UNKNOWN:
