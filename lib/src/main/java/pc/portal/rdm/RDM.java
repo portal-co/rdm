@@ -27,7 +27,7 @@ public class RDM {
                         break;
                     case MINECRAFT:
                         System.err.println(
-                                "It is shunned in the Minecraft community to use native code in mods, as it can lead to instability and security risks. Please ensure that your mod does not include any native libraries.");
+                                "It is shunned in the Minecraft community to use native code in mods, as it can lead to instability, incompatibility, and security risks. Please ensure that your mod does not include any native libraries.");
                         break;
                 }
                 System.exit(1);
