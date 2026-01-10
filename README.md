@@ -1,13 +1,13 @@
 # rdm
 
 ## Description
-Project rdm
+A Gradle-based project (`rdm`) with a library component.
 
 ## Goals
-- [ ] Add project goals
+- [ ] TBD
 
 ## Progress
-- [ ] Initial setup
+- [ ] Gradle build setup
 
 ---
 *AI assisted*
